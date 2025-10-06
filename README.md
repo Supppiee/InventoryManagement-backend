@@ -2,16 +2,16 @@
 
 ## Overview
 This is a Spring Boot backend application for managing inventory.  
-It provides REST APIs to handle products, stock, and audit logs.
+It provides REST APIs to handle products, increasing or decreasing stock quantity of the products, and audit logs.
 
-**Tech Stack:** Java, Spring Boot, MySQL, Swagger
+**Tech Stack:** Java, Spring Boot, MySQL
 
 ## Features
 - **Product Management:** Add, update, delete, and fetch products.
-- **Stock Management:** Increase or decrease product stock.
+- **Stock Management:** Increase or decrease product stock quantity.
 - **Low Stock Alerts:** Fetch products that are below a specified stock threshold.
 - **Audit Logs:** Track all stock changes with pagination and product-specific queries based on the number of increased or decreased quantity.
-- **Swagger Documentation:** Explore APIs interactively.
+- **Swagger Documentation:** Explore APIs interactively and if want to test API's in postman, we can also get the required curl from swagger doc itself.
 
 ## Setup and Run Locally
 
