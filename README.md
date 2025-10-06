@@ -13,6 +13,7 @@ It provides REST APIs to handle products, increasing or decreasing stock quantit
 - **Audit Logs:** Track all stock changes with pagination and product-specific queries based on the number of increased or decreased quantity.
 - **Swagger Documentation:** Explore APIs interactively and if want to test API's in postman, we can also get the required `curl` from swagger doc itself.
 - **Profiles implementation:** This project also contains a simple demo of the profiles, through which we can actually change the environment in which the application is running. But right now it just changes the server ports for a demo purpose.
+- **Backend validations:** Validations for the request body is also implemented from backend using Spring validations.
 
 ## Setup and Run Locally
 
