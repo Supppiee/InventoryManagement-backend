@@ -1,4 +1,4 @@
-package com.im.inventory.dto;
+package com.im.inventory.dto.responses;
 
 import com.im.inventory.entity.Product;
 import lombok.AllArgsConstructor;

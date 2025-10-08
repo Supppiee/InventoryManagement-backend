@@ -1,8 +1,8 @@
 package com.im.inventory.service;
 
 import com.im.inventory.constants.Constant;
-import com.im.inventory.dto.LowStockResponse;
-import com.im.inventory.dto.PaginatedProductResponse;
+import com.im.inventory.dto.responses.LowStockResponse;
+import com.im.inventory.dto.responses.PaginatedProductResponse;
 import com.im.inventory.entity.Product;
 import com.im.inventory.exceptions.DuplicateProductException;
 import com.im.inventory.exceptions.InvalidStockOperationException;
@@ -70,6 +70,7 @@ public class ProductService {
                 .orElseThrow(() -> new ProductNotFoundException(id));
 
         existing.setName(updatedProduct.getName());
+        existing.setPrice(updatedProduct.getPrice());
         existing.setDescription(updatedProduct.getDescription());
         existing.setLowStockThreshold(updatedProduct.getLowStockThreshold());
         existing.setStockQuantity(updatedProduct.getStockQuantity());
@@ -86,7 +87,9 @@ public class ProductService {
         return new ResponseEntity<>("Deleted product", HttpStatus.OK);
     }
 
+    // ProductService.java or wherever you handle stock
     public Product increaseProductStock(Long id, int quantity) {
+        String changedBy = "ADMIN";
         if (quantity <= 0) {
             throw new InvalidStockOperationException("Quantity must be greater than zero");
         }
@@ -94,11 +97,13 @@ public class ProductService {
                 .orElseThrow(() -> new ProductNotFoundException(id));
         product.setStockQuantity(product.getStockQuantity() + quantity);
         Product savedProduct =  productRepository.save(product);
-        auditService.logStockTransaction(savedProduct, quantity, Constant.INCREASE);
+
+        auditService.logStockTransaction(savedProduct, quantity, Constant.INCREASE, changedBy);
         return savedProduct;
     }
 
     public Product decreaseProductStock(Long id, int quantity) {
+        String changedBy = "ADMIN";
         if (quantity <= 0) {
             throw new InvalidStockOperationException("Quantity must be greater than zero");
         }
@@ -111,7 +116,8 @@ public class ProductService {
         }
         product.setStockQuantity(product.getStockQuantity() - quantity);
         Product savedProduct = productRepository.save(product);
-        auditService.logStockTransaction(savedProduct, quantity, Constant.DECREASE);
+
+        auditService.logStockTransaction(savedProduct, quantity, Constant.DECREASE, changedBy);
         return savedProduct;
     }
 

@@ -18,6 +18,7 @@ public class Product {
     private String name;
 
     private String description;
+    private double price;
 
     @Min(value = 0, message = "Stock quantity cannot be negative")
     @Column(nullable = false)
