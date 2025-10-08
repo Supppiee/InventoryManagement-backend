@@ -18,11 +18,12 @@ public class AuditService {
     @Autowired
     private AuditRepository auditRepository;
 
-    public void logStockTransaction(Product product, int quantity, String type) {
+    public void logStockTransaction(Product product, int quantity, String type, String changedby) {
         Stock stockLog = new Stock();
         stockLog.setProduct(product);
         stockLog.setQuantityChange(quantity);
         stockLog.setType(type);
+        stockLog.setChangedBy(changedby);
         stockLog.setTimestamp(LocalDateTime.now());
 
         auditRepository.save(stockLog);

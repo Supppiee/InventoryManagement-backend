@@ -1,7 +1,7 @@
 package com.im.inventory.controller;
 
-import com.im.inventory.dto.LowStockResponse;
-import com.im.inventory.dto.PaginatedProductResponse;
+import com.im.inventory.dto.responses.LowStockResponse;
+import com.im.inventory.dto.responses.PaginatedProductResponse;
 import com.im.inventory.entity.Product;
 import com.im.inventory.service.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
