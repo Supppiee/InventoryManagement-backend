@@ -63,16 +63,16 @@ inventoryManagement/
     │   │   │       ├── service/       # Service layer (business logic)
     │   │   │       └── InventoryApplication.java  # Main Spring Boot entry point
     │   │   └── resources/
-    │   │       ├── static/            # Static resources (if any)
-    │   │       ├── templates/         # HTML templates (if using Thymeleaf)
+    │   │       ├── static/            
+    │   │       ├── templates/         
     │   │       ├── application.properties
     │   │       ├── application-dev.properties
     │   │       └── application-test.properties
-    │   └── test/                      # Unit and integration tests
-    ├── target/                        # Compiled files (auto-generated)
+    │   └── test/                     
+    ├── target/                        
     ├── .gitignore                     # Git ignore configuration
     ├── .gitattributes                 # Git attributes for line endings
-    ├── HELP.md                        # Optional Maven help file
+    ├── HELP.md                        
     └── mvnw                           # Maven wrapper script
 
 ```
