@@ -6,4 +6,5 @@ public class Constant {
     public final static String PLACE = "ORDER PLACED";
     public final static String CANCEL = "ORDER CANCELLED";
     public final static String ORDER = "ORDERED";
+    public final static String EMPCODE = "EMP";
 }
