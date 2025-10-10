@@ -87,7 +87,6 @@ public class ProductService {
         return new ResponseEntity<>("Deleted product", HttpStatus.OK);
     }
 
-    // ProductService.java or wherever you handle stock
     public Product increaseProductStock(Long id, int quantity) {
         String changedBy = "ADMIN";
         if (quantity <= 0) {
